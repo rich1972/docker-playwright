@@ -14,3 +14,5 @@ RUN python -m playwright install-deps chromium && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
+
+ENTRYPOINT ["xvfb-run", "--server-args=-screen 0 1280x1200x24"]
