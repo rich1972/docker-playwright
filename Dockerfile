@@ -2,6 +2,7 @@ FROM python:3.12-slim
 
 ENV TZ=Europe/Amsterdam
 
+# Voeg xvfb en xauth toe aan de pakketten
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y --no-install-recommends wget gnupg xvfb xauth && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -15,4 +16,5 @@ RUN python -m playwright install-deps chromium && \
 
 WORKDIR /app
 
+# Dwing ELK commando om binnen Xvfb (virtueel scherm) te draaien
 ENTRYPOINT ["xvfb-run", "--server-args=-screen 0 1280x1200x24"]
