@@ -3,7 +3,7 @@ FROM python:3.12-slim
 ENV TZ=Europe/Amsterdam
 
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends wget gnupg && \
+    apt-get install -y --no-install-recommends wget gnupg xvfb xauth && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache-dir --upgrade pip && \
