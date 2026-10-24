@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir packaging requests python-dotenv playwright==1.63.0 schedule pyyaml
+    pip install --no-cache-dir packaging requests python-dotenv "playwright>=1.63,<2" schedule pyyaml
 
 RUN python -m playwright install-deps chromium && \
     python -m playwright install chromium && \
