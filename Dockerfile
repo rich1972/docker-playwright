@@ -3,7 +3,7 @@ ENV TZ=Europe/Amsterdam \
     PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends xvfb xauth && \
+    apt-get install -y --no-install-recommends xvfb xauth libatomic1 && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache-dir --upgrade pip && \
