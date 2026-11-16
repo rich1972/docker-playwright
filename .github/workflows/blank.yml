@@ -4,6 +4,7 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: '0 0 * * 1' # Elke maandag automatisch bouwen voor updates
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
